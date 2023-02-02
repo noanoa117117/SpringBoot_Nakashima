@@ -1,5 +1,10 @@
 package com.example.hello;
 
-public class Employee {
+import lombok.Data;
 
+@Data
+public class Employee {
+	private String employeeId;
+	private String employeeName;
+	private int employeeAge;
 }
