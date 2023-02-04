@@ -13,10 +13,10 @@ public class UserApplicationService {
 	
 	@Autowired
 	private MessageSource messageSource;
-	public Map<String, Integer> getGenderMap(){
+	public Map<String, Integer> getGenderMap(Locale locale){
 		Map<String, Integer> genderMap = new LinkedHashMap<>();
-		String male = messageSource.getMessage("male", null,Locale.JAPAN);
-		String female = messageSource.getMessage("female", null,Locale.JAPAN);
+		String male = messageSource.getMessage("male", null,locale);
+		String female = messageSource.getMessage("female", null,locale);
 		genderMap.put(male,1);
 		genderMap.put(female,2);
 		return genderMap;
