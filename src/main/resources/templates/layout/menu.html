@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf" layout:decorate="~{layout/layout}">
+<head></head>
+<meta charset="UTF-8">
+
+<body>
+	<div layout:fragment="menu" class="bg-light">
+		<ul class="nav nav-pills nav-stacked">
+			<li role="presentation">
+				<a class="nav link" th:href="@{'/user/list'}">ユーザー一覧</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
