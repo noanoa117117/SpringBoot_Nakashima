@@ -28,3 +28,11 @@ user_id VARCHAR(50)
 ,salary INT
 ,PRIMARY KEY(user_id,year_month)
 );
+
+/*給料テーブル*/
+CREATE TABLE IF NOT EXISTS t_salary(
+	user_id VARCHAR(50)
+	,year_month VARCHAR(50)
+	,salary INT
+	,PRIMARY KEY(user_id,year_month)
+);

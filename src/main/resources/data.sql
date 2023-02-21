@@ -26,7 +26,7 @@ department_id
 ;
 
 /*給料テーブル*/
-INSERT INTO t_saraly(
+INSERT INTO t_salary(
 user_id
 ,year_month
 ,salary
