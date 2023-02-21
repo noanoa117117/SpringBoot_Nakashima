@@ -78,7 +78,7 @@
 		<!-- thymeleaf-layout-dialect -->
 		<dependency>
 			<groupId>nz.net.ultraq.thymeleaf</groupId>
-			<artifactId>thymeleaf-layout-dialect</artifactId>>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
 		</dependency>
 		<!-- MyBatis -->
 		<dependency>
