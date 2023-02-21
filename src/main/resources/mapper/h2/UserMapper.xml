@@ -48,6 +48,14 @@
 		*
 		from
 		m_user
+		<where>
+			<if test="userId != null">
+				user_id like '%' || #{userId} || '%'
+			</if>
+			<if test="userName != null">
+				and user_name like '%' || #{userName} || '%'
+			</if>
+		</where>
 	</select>
 
 	<!-- ユーザー一件検索 -->
@@ -57,7 +65,8 @@
 		from
 		m_user
 		where
-		user_id = #{userId}
+		user_id =
+		#{userId}
 	</select>
 
 	<!-- ユーザー更新1件 -->
