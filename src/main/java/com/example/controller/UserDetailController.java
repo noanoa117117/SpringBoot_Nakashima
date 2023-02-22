@@ -13,8 +13,11 @@ import com.example.domain.user.model.MUser;
 import com.example.domain.user.service.UserService;
 import com.example.form.UserDetailForm;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping("/user")
+@Slf4j
 public class UserDetailController {
 	
 	@Autowired
@@ -46,12 +49,17 @@ public class UserDetailController {
 	@PostMapping(value = "/detail",params = "update")
 	public String updateUser(UserDetailForm form,Model model) {
 		
+		try {
 		//ユーザーを更新
 		userService.updateUserOne(form.getUserId(),
 			form.getPassword(),
 			form.getUserName());
+		}catch(Exception e){
+			log.error("ユーザー更新でエラー",e);
+		}
 		//ユーザー画面にリダイレクト
 		return "redirect:/user/list";
+		
 	}
 	
 	//ユーザー削除処理
