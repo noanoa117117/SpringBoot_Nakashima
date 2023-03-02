@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) throws Exception{
 		web 
 			.ignoring()
-				.antMatchers("/Webjars/**")
+				.antMatchers("/webjars/**")
 				.antMatchers("/css/**")
 				.antMatchers("/js/**")
 				.antMatchers("/h2-console/**");
@@ -41,8 +41,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		//ログイン不要のページ設定
 		http
 			.authorizeRequests()
-				.antMatchers("/login/**").permitAll() //直リンクok
-				.antMatchers("/user/signup/**").permitAll() //直リンクok
+				.antMatchers("/login").permitAll() //直リンクok
+				.antMatchers("/user/signup").permitAll() //直リンクok
 				.anyRequest().authenticated(); //それ以外はNG
 		
 		//ログイン処理
@@ -60,6 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	/*認証の設定*/
+	@Override
 	protected void configure(AuthenticationManagerBuilder auth)throws Exception {
 		
 		PasswordEncoder encoder = passwordEncoder();
