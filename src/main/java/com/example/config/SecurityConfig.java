@@ -51,7 +51,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.loginProcessingUrl("/login")//ログイン処理
 				.loginPage("/login")//ログインページの指定
 				.failureUrl("/login?error")//ログイン失敗時の遷移先
-				.usernameParameter("password")//ログインページのパスワード
+				.usernameParameter("userId")//ログインページのパスワード
+				.passwordParameter("password")
 				.defaultSuccessUrl("/user/list",true);//成功後の遷移先
 				
 				//CSRF対策を無効に
