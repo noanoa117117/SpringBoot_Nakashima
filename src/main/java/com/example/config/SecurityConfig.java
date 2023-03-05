@@ -44,6 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			.authorizeRequests()
 				.antMatchers("/login").permitAll() //直リンクok
 				.antMatchers("/user/signup").permitAll() //直リンクok
+				.antMatchers("/admin").hasAuthority("ROLE_ADMIN")//権限制御
 				.anyRequest().authenticated(); //それ以外はNG
 		
 		//ログイン処理
