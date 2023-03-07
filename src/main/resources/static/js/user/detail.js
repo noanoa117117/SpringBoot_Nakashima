@@ -32,7 +32,7 @@ function updateUser(){
 		//ajax通信成功の処理
 		alert('ユーザーを更新しました');
 		//ユーザー一覧画面にリダイレクト
-		windows.location.href='/user/list';
+		window.location.href='/user/list';
 		
 	}).fail(function(jqXHR,textStatus,errorThrown){
 		//ajax失敗次の処理
