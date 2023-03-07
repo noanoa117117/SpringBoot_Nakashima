@@ -14,7 +14,7 @@
 <title th:text="#{user.signup.title}"></title>
 </head>
 <body class="bg-light">
-	<form id="sign-form" method="post" action="/user/signup"
+	<form id="signup-form" method="post" action="/user/signup"
 		class="form-signup" th:object="${signupForm}">
 		<h1 class="text-center" th:text="#{user.signup.title}"></h1>
 
@@ -61,15 +61,15 @@
 			</div>
 			<div class="text-danger" th:if="${#fields.hasErrors('gender')}"
 				th:errors="*{gender}"></div>
+		</div>
 
-			<!-- 登録ボタン -->
-			<input type="submit" th:value="#{user.signup.btn}"
-				class="btn btn-primary w-100 mt-3" />
-			<button id="btn-signup" type="button" class="btn btn-primary w-100 mt-3">
-			ユーザー登録(REST)
-			</button>
-			<input type="hidden" th:name="${_csrf.parameterName}"
-				th:value="${_csrf.token}" />
+		<!-- 登録ボタン -->
+		<input type="submit" th:value="#{user.signup.btn}"
+			class="btn btn-primary w-100 mt-3" />
+		<button id="btn-signup" type="button"
+			class="btn btn-primary w-100 mt-3">ユーザー登録(REST)</button>
+		<input type="hidden" th:name="${_csrf.parameterName}"
+			th:value="${_csrf.token}" />
 	</form>
 </body>
 </html>
