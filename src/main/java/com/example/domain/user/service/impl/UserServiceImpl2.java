@@ -8,6 +8,9 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.dao.DataAccessException;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -49,7 +52,13 @@ public class UserServiceImpl2 implements UserService{
 	/*ユーザー取得*/
 	@Override
 	public List<MUser> getUsers(MUser user){
-		return repository.findAll();
+		
+		//検索条件
+		ExampleMatcher matcher = ExampleMatcher
+				.matching() //and条件
+				.withStringMatcher(StringMatcher.CONTAINING)//like区
+				.withIgnoreCase(); //大文字小文字の両方
+		return repository.findAll(Example.of(user,matcher));
 	}
 	
 	/*ユーザー取得1件*/
