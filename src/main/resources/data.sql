@@ -18,7 +18,7 @@ user_id
 
 /*部署マスター*/
 INSERT INTO m_department(
-department_id
+　department_id
 ,department_name
 )VALUES
 (1,'システム管理部')

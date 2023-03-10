@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -23,6 +25,9 @@ public class MUser {
 	private Integer gender;
 	private Integer departmentId;
 	private String role;
+	
+	@ManyToOne( optional = true )
+	@JoinColumn(insertable=false, updatable=false, name = "departmentId" )
 	@Transient
 	private Department department;
 	@Transient

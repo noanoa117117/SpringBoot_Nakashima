@@ -94,7 +94,7 @@
 		left join t_salary
 			on m_user.user_id = t_salary.user_id
 		where
-			m_user.user_id =#{userId}
+			m_user.user_id =　#{userId}
 	</select>
 
 	<!-- ユーザー更新1件 -->
